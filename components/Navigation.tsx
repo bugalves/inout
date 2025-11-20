@@ -26,10 +26,6 @@ const routes = [
     href: "/dashboard/categories",
     label: "Categorias",
   },
-  {
-    href: "/dashboard/settings",
-    label: "Definições",
-  },
 ];
 
 const Navigation = () => {

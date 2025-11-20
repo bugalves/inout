@@ -2,7 +2,6 @@ import { Upload } from "lucide-react";
 import { useCSVReader } from "react-papaparse";
 
 import { Button } from "@/components/ui/button";
-import { usePaywall } from "@/features/subscriptions/hooks/use-paywall";
 
 type Props = {
   onUpload: (results: any) => void;
@@ -10,16 +9,6 @@ type Props = {
 
 export const UploadButton = ({ onUpload }: Props) => {
   const { CSVReader } = useCSVReader();
-  const { shouldBlock, triggerPaywall } = usePaywall();
-
-  if (shouldBlock) {
-    return (
-      <Button size="sm" className="w-full lg:w-auto" onClick={triggerPaywall}>
-        <Upload className="size-4 mr-2" />
-        Importar
-      </Button>
-    );
-  }
 
   return (
     <CSVReader onUploadAccepted={onUpload}>

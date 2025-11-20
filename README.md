@@ -1,6 +1,6 @@
 # Introduction
 
-Ecomsy, an interactive platform for managing personal that offers a variety of advanced features, including an interactive financial dashboard, various types of customizable charts, filters by bank account and date, a detailed table of transactions, a form for adding transactions, customizable selection components, clear distinction between income and expenses, import of transactions via CSV, status management via Tanstack React Query, integration with bank accounts via Plaid, premium upgrades via Leemon Squeezy, authentication via Clerk and much more...
+Ecomsy, an interactive platform for managing personal that offers a variety of advanced features, including an interactive financial dashboard, various types of customizable charts, filters by bank account and date, a detailed table of transactions, a form for adding transactions, customizable selection components, clear distinction between income and expenses, import of transactions via CSV, status management via Tanstack React Query, authentication via Clerk and much more...
 
 ## Installation
 
@@ -17,36 +17,6 @@ Follow the steps to install and configure the platform.
 ```
 
 ## API documentation
-
-### plaid
-
-#### Returns the user's connected bank
-
-```http
-  GET /api/plaid/connected-bank
-```
-
-#### Disconnects the bank account
-
-```http
-  DELETE /api/plaid/connected-bank
-```
-
-#### Creates the Plaid link-token instance
-
-```http
-  POST /api/plaid/create-link-token
-```
-
-#### Exchanges the public token with plaid
-
-```http
-  POST /api/plaid/exchange-public-token
-```
-
-| Parameter     | Type     | Description                                        |
-| :------------ | :------- | :------------------------------------------------- |
-| `publicToken` | `string` | **Required**. Public token to perform the exchange |
 
 ### summary
 
@@ -97,7 +67,6 @@ Follow the steps to install and configure the platform.
 | Parameter | Type     | Description                                 |
 | :-------- | :------- | :------------------------------------------ |
 | `id`      | `string` | **Required**. Account id                    |
-| `plaidId` | `string` | Connected bank account                      |
 | `name`    | `string` | **Required**. Name of the account           |
 | `userId`  | `string` | **Required**. User id of the account holder |
 
@@ -130,7 +99,6 @@ Follow the steps to install and configure the platform.
 | Parameter | Type     | Description                                  |
 | :-------- | :------- | :------------------------------------------- |
 | `id`      | `string` | **Required**. Category id                    |
-| `plaidId` | `string` | Connected bank account                       |
 | `name`    | `string` | **Required**. Name of the category           |
 | `userId`  | `string` | **Required**. User id of the category holder |
 
@@ -149,7 +117,6 @@ Follow the steps to install and configure the platform.
 | Parameter | Type     | Description                                  |
 | :-------- | :------- | :------------------------------------------- |
 | `id`      | `string` | **Required**. Category id                    |
-| `plaidId` | `string` | Connected bank account                       |
 | `name`    | `string` | **Required**. Name of the category           |
 | `userId`  | `string` | **Required**. User id of the category holder |
 
@@ -182,7 +149,6 @@ Follow the steps to install and configure the platform.
 | Parameter | Type     | Description                                     |
 | :-------- | :------- | :---------------------------------------------- |
 | `id`      | `string` | **Required**. Transaction id                    |
-| `plaidId` | `string` | Connected bank account                          |
 | `name`    | `string` | **Required**. Name of the transaction           |
 | `userId`  | `string` | **Required**. User id of the transaction holder |
 
@@ -201,7 +167,6 @@ Follow the steps to install and configure the platform.
 | Parameter | Type     | Description                                     |
 | :-------- | :------- | :---------------------------------------------- |
 | `id`      | `string` | **Required**. Transaction id                    |
-| `plaidId` | `string` | Connected bank account                          |
 | `name`    | `string` | **Required**. Name of the transaction           |
 | `userId`  | `string` | **Required**. User id of the transaction holder |
 
@@ -209,26 +174,6 @@ Follow the steps to install and configure the platform.
 
 ```http
   DELETE /api/transactions/:id
-```
-
-### subscriptions
-
-#### Return the subscription of the account logged in
-
-```http
-  GET /api/subscriptions/current
-```
-
-#### Flow for purchasing a subscription on the Leemon Squeezy side
-
-```http
-  POST /api/subscriptions/checkout
-```
-
-#### Call to the Leemon Squeezy webhook to update subscriptions
-
-```http
-  POST /api/subscriptions/webhook
 ```
 
 ### seed

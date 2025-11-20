@@ -26,21 +26,6 @@ export const Testimonials = () => {
         <div className="">
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
             <p className="text-2xl leading-normal ">
-              Adoro a <Mark>simplicidade e a interface intuitiva</Mark> do
-              Ecomsy. É fácil de usar e tem todas as funcionalidades que preciso
-              para gerir as minhas finanças pessoais.
-            </p>
-
-            <Avatar
-              image={userTwoImg}
-              name="Miguel Fernandes"
-              title="Co-fundador do Plaid Inc."
-            />
-          </div>
-        </div>
-        <div className="">
-          <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
-            <p className="text-2xl leading-normal ">
               Antes de aderir gastava mais do que devia e não conseguia poupar.
               Agora, com os relatórios e alertas personalizados, consigo
               <Mark>manter-me no caminho certo.</Mark>

@@ -12,7 +12,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileSearch, Loader2, PieChart, Radar, Target } from "lucide-react";
 
 import { Skeleton } from "@/components/ui/skeleton";
-import { usePaywall } from "@/features/subscriptions/hooks/use-paywall";
 
 // Chart Variants
 import { PieVariant } from "@/components/pie-variant";
@@ -28,16 +27,8 @@ type Props = {
 
 export const SpendingPie = ({ data = [] }: Props) => {
   const [chartType, setChartType] = useState("pie");
-  const { shouldBlock, triggerPaywall } = usePaywall();
 
-  const onTypeChange = (type: string) => {
-    if (type !== "pie" && shouldBlock) {
-      triggerPaywall();
-      return;
-    }
-
-    setChartType(type);
-  };
+  const onTypeChange = (type: string) => setChartType(type);
 
   return (
     <Card className="border-none drop-shadow-sm">

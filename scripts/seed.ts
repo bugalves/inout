@@ -11,24 +11,22 @@ config({ path: ".env.local" });
 const sql = neon(process.env.DATABASE_URL!);
 const db = drizzle(sql);
 
-const SEED_USER_ID = "user_2nCWELNX0MT3tMHEvo1PfdSpxME"; // my Clerk auth userId
+const SEED_USER_ID = "user_35eyXDwvUxx9ft0k7cPjsVbWarI"; // my Clerk auth userId
 const SEED_CATEGORIES = [
   {
     id: "category_1",
     name: "Alimentação",
     userId: SEED_USER_ID,
-    plaidId: null,
   },
-  { id: "category_2", name: "Renda", userId: SEED_USER_ID, plaidId: null },
-  { id: "category_3", name: "Acessórios", userId: SEED_USER_ID, plaidId: null },
-  { id: "category_4", name: "Roupa", userId: SEED_USER_ID, plaidId: null },
-  { id: "category_5", name: "Transporte", userId: SEED_USER_ID, plaidId: null },
-  { id: "category_6", name: "Saúde", userId: SEED_USER_ID, plaidId: null },
+  { id: "category_2", name: "Renda", userId: SEED_USER_ID },
+  { id: "category_3", name: "Acessórios", userId: SEED_USER_ID },
+  { id: "category_4", name: "Roupa", userId: SEED_USER_ID },
+  { id: "category_5", name: "Transporte", userId: SEED_USER_ID },
+  { id: "category_6", name: "Saúde", userId: SEED_USER_ID },
   {
     id: "category_7",
     name: "Entretenimento",
     userId: SEED_USER_ID,
-    plaidId: null,
   },
 ];
 
@@ -37,9 +35,8 @@ const SEED_ACCOUNTS = [
     id: "account_1",
     name: "Conta à ordem",
     userId: SEED_USER_ID,
-    plaidId: null,
   },
-  { id: "account_2", name: "Poupanças", userId: SEED_USER_ID, plaidId: null },
+  { id: "account_2", name: "Poupanças", userId: SEED_USER_ID },
 ];
 
 const defaultTo = new Date();
@@ -74,7 +71,7 @@ const generateTransactionsForDay = (day: Date) => {
     const isExpense = Math.random() > 0.6; // 60% chance of being an expense
     const amount = generateRandomAmount(category);
     const formattedAmount = convertAmountToMiliunits(
-      isExpense ? -amount : amount,
+      isExpense ? -amount : amount
     ); // Negative for expenses
 
     SEED_TRANSACTIONS.push({

@@ -5,7 +5,6 @@ import { integer, pgTable, text, timestamp } from "drizzle-orm/pg-core";
 
 export const accounts = pgTable("accounts", {
   id: text("id").primaryKey(),
-  plaidId: text("plaid_id"),
   name: text("name").notNull(),
   userId: text("user_id").notNull(),
 });
@@ -18,7 +17,6 @@ export const insertAccountSchema = createInsertSchema(accounts);
 
 export const categories = pgTable("categories", {
   id: text("id").primaryKey(),
-  plaidId: text("plaid_id"),
   name: text("name").notNull(),
   userId: text("user_id").notNull(),
 });
@@ -64,11 +62,4 @@ export const connectedBanks = pgTable("connected_banks", {
   id: text("id").primaryKey(),
   userId: text("userId").notNull(),
   accessToken: text("access_token").notNull(),
-});
-
-export const subscriptions = pgTable("subscriptions", {
-  id: text("id").primaryKey(),
-  userId: text("user_id").notNull().unique(),
-  subscriptionId: text("subscription_id").notNull().unique(),
-  status: text("status").notNull(),
 });
