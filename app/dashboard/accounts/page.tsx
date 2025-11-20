@@ -1,8 +1,9 @@
 "use client";
 
-import { Loader2, Plus } from "lucide-react";
+import { Loader2, Plus, ArrowRightLeft } from "lucide-react";
 
 import { useNewAccount } from "@/features/accounts/hooks/use-new-account";
+import { useTransfer } from "@/features/transactions/hooks/use-transfer";
 import { useGetAccounts } from "@/features/accounts/api/use-get-accounts";
 import { useBulkDeleteAccounts } from "@/features/accounts/api/use-bulk-delete-accounts";
 
@@ -15,6 +16,7 @@ import { columns } from "./columns";
 
 const AccountsPage = () => {
   const newAccount = useNewAccount();
+  const transfer = useTransfer();
   const deleteAccounts = useBulkDeleteAccounts();
   const accountsQuery = useGetAccounts();
   const accounts = accountsQuery.data || [];
@@ -45,10 +47,20 @@ const AccountsPage = () => {
           <CardTitle className="text-xl line-clamp-1">
             Contas bancárias
           </CardTitle>
-          <Button size="sm" onClick={newAccount.onOpen}>
-            <Plus className="size-4 me-2" />
-            Adicionar nova
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button size="sm" onClick={newAccount.onOpen}>
+              <Plus className="size-4 me-2" />
+              Adicionar nova conta
+            </Button>
+            <Button
+              size="sm"
+              variant="outline"
+              onClick={() => transfer.onOpen()}
+            >
+              <ArrowRightLeft className="size-4 me-2" />
+              Transferir entre contas
+            </Button>
+          </div>
         </CardHeader>
         <CardContent>
           <DataTable

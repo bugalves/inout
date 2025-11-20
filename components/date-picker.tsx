@@ -1,5 +1,3 @@
-import * as React from "react";
-
 import { format } from "date-fns";
 import { pt } from "date-fns/locale"; // PT date-fns language
 

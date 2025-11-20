@@ -1,6 +1,6 @@
 # Introduction
 
-Ecomsy, an interactive platform for managing personal that offers a variety of advanced features, including an interactive financial dashboard, various types of customizable charts, filters by bank account and date, a detailed table of transactions, a form for adding transactions, customizable selection components, clear distinction between income and expenses, import of transactions via CSV, status management via Tanstack React Query, authentication via Clerk and much more...
+In-out, an interactive platform for managing personal that offers a variety of advanced features, including an interactive financial dashboard, various types of customizable charts, filters by bank account and date, a detailed table of transactions, a form for adding transactions, customizable selection components, clear distinction between income and expenses, import of transactions via CSV, status management via Tanstack React Query, authentication via Clerk and much more...
 
 ## Installation
 

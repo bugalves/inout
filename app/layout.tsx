@@ -14,7 +14,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ecomsy",
+  title: "InOut",
   description: "Track Your Finances, Transform Your Future",
   icons: {
     icon: "/logo.svg",
@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <ClerkProvider localization={ClerkPT}>
       <html lang="en">
-        <body className={inter.className}>
+        <body className={inter.className} suppressHydrationWarning>
           <QueryProvider>
             <SheetProvider />
             <Toaster />

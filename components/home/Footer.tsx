@@ -12,7 +12,7 @@ export function Footer() {
             <div>
               {" "}
               <Link
-                href="/"
+                href="/dashboard"
                 className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100"
               >
                 <Image
@@ -22,35 +22,8 @@ export function Footer() {
                   height="32"
                   className="w-8"
                 />
-                <span>Ecomsy</span>
+                <span>InOut</span>
               </Link>
-            </div>
-
-            <div className="max-w-md mt-4 text-gray-500 dark:text-gray-400">
-              Ecomsy é uma plataforma de código-aberto com objetivo de
-              descomplicar a gestão do dinheiro.
-            </div>
-          </div>
-
-          <div>
-            <div>Siga-nos</div>
-            <div className="flex mt-5 space-x-5 text-gray-400 dark:text-gray-500">
-              <a href="https://twitter.com/" target="_blank" rel="noopener">
-                <span className="sr-only">Twitter</span>
-                <Twitter />
-              </a>
-              <a href="https://facebook.com/" target="_blank" rel="noopener">
-                <span className="sr-only">Facebook</span>
-                <Facebook />
-              </a>
-              <a href="https://instagram.com/" target="_blank" rel="noopener">
-                <span className="sr-only">Instagram</span>
-                <Instagram />
-              </a>
-              <a href="https://linkedin.com/" target="_blank" rel="noopener">
-                <span className="sr-only">Linkedin</span>
-                <Linkedin />
-              </a>
             </div>
           </div>
         </div>
@@ -62,8 +35,7 @@ export function Footer() {
             href={"https://github.com/rsoaresdev"}
           >
             Rafael Soares
-          </Link>{" "}
-          para a PAP.
+          </Link>
         </div>
       </Container>
     </div>
